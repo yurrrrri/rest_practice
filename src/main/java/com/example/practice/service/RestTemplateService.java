@@ -1,5 +1,6 @@
 package com.example.practice.service;
 
+import com.example.practice.dto.UserResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import java.net.URI;
 @Service
 public class RestTemplateService {
 
-    public String hello() {
+    public UserResponse hello() {
         URI uri = UriComponentsBuilder
                 .fromUriString("http://localhost:9090")
                 .path("/api/server/hello")
@@ -22,7 +23,7 @@ public class RestTemplateService {
         log.info("{}", uri);
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
+        ResponseEntity<UserResponse> result = restTemplate.getForEntity(uri, UserResponse.class);
         log.info("{}", result.getStatusCode());
         log.info("{}", result.getBody());
 
