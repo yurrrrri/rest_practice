@@ -1,6 +1,7 @@
 package com.example.practice.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -18,10 +19,14 @@ public class RestTemplateService {
                 .encode()
                 .build()
                 .toUri();
-        log.info(uri.toString());
+        log.info("{}", uri);
 
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(uri, String.class);
+        ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
+        log.info("{}", result.getStatusCode());
+        log.info("{}", result.getBody());
+
+        return result.getBody();
     }
 
 }
