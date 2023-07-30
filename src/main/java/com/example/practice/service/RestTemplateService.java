@@ -1,5 +1,6 @@
 package com.example.practice.service;
 
+import com.example.practice.dto.UserRequest;
 import com.example.practice.dto.UserResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ import java.net.URI;
 @Service
 public class RestTemplateService {
 
-    public UserResponse hello() {
+    public UserResponse getHello() {
         URI uri = UriComponentsBuilder
                 .fromUriString("http://localhost:9090")
                 .path("/api/server/hello")
@@ -25,11 +26,37 @@ public class RestTemplateService {
         log.info("{}", uri);
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<UserResponse> result = restTemplate.getForEntity(uri, UserResponse.class);
+        ResponseEntity<UserResponse> result = restTemplate
+                .getForEntity(uri, UserResponse.class);
+
         log.info("{}", result.getStatusCode());
         log.info("{}", result.getBody());
 
         return result.getBody();
+    }
+
+    public UserResponse post() {
+        URI uri = UriComponentsBuilder
+                .fromUriString("http://localhost:9090")
+                .path("/api/server/user/{userId}/name/{userName}")
+                .encode()
+                .buildAndExpand(100, "steve")
+                .toUri();
+        log.info("{}", uri);
+
+        UserRequest req = new UserRequest();
+        req.setName("steve");
+        req.setAge(10);
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<UserResponse> res = restTemplate
+                .postForEntity(uri, req, UserResponse.class);
+
+        log.info("{}", res.getStatusCode());
+        log.info("{}", res.getHeaders());
+        log.info("{}", res.getBody());
+
+        return res.getBody();
     }
 
 }
