@@ -1,14 +1,16 @@
-package com.example.practice.calculator;
+package com.example.practice.calculator.component;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@RequiredArgsConstructor
+@Component
 public class DollarCalculator implements ICalculator {
 
     private int price = 1;
     private final MarketApi marketApi;
 
-    public DollarCalculator(MarketApi marketApi) {
-        this.marketApi = marketApi;
-    }
-
+    @Override
     public void init() {
         this.price = marketApi.connect();
     }

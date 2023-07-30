@@ -1,8 +1,5 @@
-package com.example.calculator;
+package com.example.practice.calculator.component;
 
-import com.example.practice.calculator.Calculator;
-import com.example.practice.calculator.DollarCalculator;
-import com.example.practice.calculator.MarketApi;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
 class DollarCalculatorTest {
@@ -32,7 +29,7 @@ class DollarCalculatorTest {
         Calculator calculator = new Calculator(dollarCalculator);
 
         assertThat(calculator.sum(10, 10)).isEqualTo(24000);
-        assertThat(calculator.minus(10, 10)).isEqualTo(0);
+        assertThat(calculator.minus(10, 10)).isZero();
     }
 
     @Test
@@ -43,7 +40,7 @@ class DollarCalculatorTest {
         Calculator calculator = new Calculator(dollarCalculator);
 
         assertThat(calculator.sum(10, 10)).isEqualTo(60000);
-        assertThat(calculator.minus(10, 10)).isEqualTo(0);
+        assertThat(calculator.minus(10, 10)).isZero();
     }
 
 }
