@@ -1,5 +1,8 @@
 package com.example.calculator;
 
+import com.example.practice.calculator.Calculator;
+import com.example.practice.calculator.DollarCalculator;
+import com.example.practice.calculator.MarketApi;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

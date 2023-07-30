@@ -1,8 +1,8 @@
-package com.example.practice.controller;
+package com.example.practice.rest.controller;
 
-import com.example.practice.dto.Req;
-import com.example.practice.dto.UserResponse;
-import com.example.practice.service.RestTemplateService;
+import com.example.practice.rest.dto.Req;
+import com.example.practice.rest.dto.UserResponse;
+import com.example.practice.rest.service.RestTemplateService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

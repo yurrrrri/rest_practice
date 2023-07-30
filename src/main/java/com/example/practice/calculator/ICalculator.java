@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.practice.calculator;
 
 public interface ICalculator {
 

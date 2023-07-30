@@ -1,8 +1,8 @@
-package com.example.practice.service;
+package com.example.practice.rest.service;
 
-import com.example.practice.dto.Req;
-import com.example.practice.dto.UserRequest;
-import com.example.practice.dto.UserResponse;
+import com.example.practice.rest.dto.Req;
+import com.example.practice.rest.dto.UserRequest;
+import com.example.practice.rest.dto.UserResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
