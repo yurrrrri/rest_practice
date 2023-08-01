@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(CalculatorApiController.class)
 @AutoConfigureWebMvc
 @Import({Calculator.class, DollarCalculator.class})
-class CalculatorApiControllerTest {
+class CalculatorSwaggerApiControllerTest {
 
     @MockBean
     private MarketApi marketApi;
