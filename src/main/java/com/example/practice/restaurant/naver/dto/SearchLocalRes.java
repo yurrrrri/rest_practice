@@ -15,7 +15,6 @@ public class SearchLocalRes {
     private int total;
     private int start;
     private int display;
-    private String category;
     private List<SearchLocalItem> items;
 
     @Data
@@ -24,6 +23,7 @@ public class SearchLocalRes {
     public static class SearchLocalItem {
         private String title;
         private String link;
+        private String category;
         private String description;
         private String telephone;
         private String address;
