@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MemoryDbEntity {
 
-    private int index;
+    protected Integer index;
 
 }

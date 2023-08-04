@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Setter
 public class WishListDto {
 
-    private int index;
+    private Integer index;
     private String title;
     private String category;
     private String address;
